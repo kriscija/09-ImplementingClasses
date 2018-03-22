@@ -64,7 +64,7 @@ class Point(object):
 
 
     def move_to(self, x, y):
-        self.distance = self.distance 
+        self.distance = self.distance
         self.x = x
         self.y = y
         self.moves = self.moves + 1
