@@ -45,17 +45,17 @@ def main():
 ########################################################################
 class Point(object):
 
-    def get_distance_from(self, point):
-        import math
-        dist = ((math.fabs(self.x-point.x))**2+(math.fabs(self.y-point.y))**2)**.5
-        return ((math.fabs(self.x-point.x))**2+(math.fabs(self.y-point.y))**2)**.5
+
 
 
     def __init__ (self, x, y):
+        self.permx = x
+        self.permy = y
         self.x = x
         self.y = y
         self.moves = 0
         self.distance = 0
+
     def __repr__(self):
         return 'Point({}, {})'.format(self.x, self.y)
 
@@ -82,11 +82,17 @@ class Point(object):
     def get_number_of_moves_made(self):
         return self.moves
 
+    def get_distance_from(self, point):
+        import math
+        dist = ((math.fabs(self.permx-point.x))**2+(math.fabs(self.permy-point.y))**2)**.5
+        return dist
 
 
 
-
-
+    def get_distance_from_start(self, point):
+        import math
+        dist = ((math.fabs(self.x-point.x))**2+(math.fabs(self.y-point.y))**2)**.5
+        return dist
 
 def run_test_init():
     """
